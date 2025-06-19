@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CareerBridge - Portal Kerja & Magang Mahasiswa</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
     <style>
         * {
             margin: 0;
@@ -355,6 +354,7 @@
     <header>
         <nav class="container">
             <a href="#" class="logo">CareerBridge</a>
+            
         </nav>
     </header>
 
@@ -364,28 +364,34 @@
             <h1>Wujudkan Karir Impianmu</h1>
             <p>Platform terlengkap untuk mahasiswa mencari kerja dan magang. Temukan peluang terbaik dari perusahaan-perusahaan terpercaya.</p>
         </div>
-
         <div class="flex justify-center my-7">
             <div class="w-full max-w-md bg-white rounded-xl shadow-lg p-8">
-                <form method="POST" action="/login">
+                <h2 class="text-2xl font-bold text-center text-blue-600 mb-6">Register to eLoker</h2>
+            
+                <form method= "POST" action = "/register">
                 @csrf
                 <div class="mb-4">
-                    <label class="block text-sm mb-1">Email or Username</label>
-                    <input type="text" name='email' class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 text-black" placeholder="you@example.com" />
+                    <label class="block text-sm mb-1">Username</label>
+                    <input type="text" name= "username" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 text-black" placeholder="your_username" />
+                </div>
+                <div class="mb-4">
+                    <label class="block text-sm mb-1">Email</label>
+                    <input type="email" name="email" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 text-black" placeholder="you@example.com" />
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm mb-1">Password</label>
-                    <input type="password" name='password' class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 text-black" placeholder="********" />
+                    <input type="password" name="password" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 text-black" placeholder="********" />
                 </div>
-                <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">Login</button>
+                <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">Register</button>
                 </form>
 
                 <p class="text-sm text-center mt-4 text-gray-500">
-                Don't have an account?
-                <a href="/register" class="text-blue-600 hover:underline">Sign up</a>
+                Already have an account?
+                <a href="/login" class="text-blue-600 hover:underline">Login here</a>
                 </p>
             </div>
         </div>
+        
     </section>
 
 

@@ -8,8 +8,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('home'); 
-});
+Route::get('/login', function (){
+    return view('login');
+})->name('login');
 
-Route::get('/login', [AuthController::class, 'showLogin']);
+Route::get('/register', function (){
+    return view('register');
+})->name('register');
+
+Route::post('/register', [Authcontroller::class, 'register']);
+Route::post('/login', [Authcontroller::class, 'login']);
