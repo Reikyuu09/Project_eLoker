@@ -4,9 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/home', function (){
+    return view('home');
+})->name('home');
 
 Route::get('/login', function (){
     return view('login');
@@ -16,5 +17,5 @@ Route::get('/register', function (){
     return view('register');
 })->name('register');
 
-Route::post('/register', [Authcontroller::class, 'register']);
-Route::post('/login', [Authcontroller::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
