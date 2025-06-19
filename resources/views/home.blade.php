@@ -354,14 +354,14 @@
         <nav class="container">
             <a href="#" class="logo">CareerBridge</a>
             <ul class="nav-links">
-                <li><a href="#jobs">Lowongan</a></li>
+                <li><a href="#jobs">Home</a></li>
                 <li><a href="#companies">Perusahaan</a></li>
-                <li><a href="#tips">Tips</a></li>
+                <li><a href="#tips">Lowongan</a></li>
                 <li><a href="#about">Tentang</a></li>
             </ul>
             <div class="auth-buttons">
-                <a href="#" class="btn btn-outline">Masuk</a>
-                <a href="#" class="btn btn-primary">Daftar</a>
+                <a href="/login" class="btn btn-outline">Masuk</a>
+                <a href="/register" class="btn btn-primary">Daftar</a>
             </div>
         </nav>
     </header>
@@ -372,8 +372,7 @@
             <h1>Wujudkan Karir Impianmu</h1>
             <p>Platform terlengkap untuk mahasiswa mencari kerja dan magang. Temukan peluang terbaik dari perusahaan-perusahaan terpercaya.</p>
             <div class="hero-buttons">
-                <a href="#" class="btn btn-primary btn-large">Cari Lowongan</a>
-                <a href="#" class="btn btn-outline btn-large">Daftar Sebagai Perusahaan</a>
+                <a href="/login" class="btn btn-primary btn-large">Cari Lowongan</a>
             </div>
         </div>
     </section>

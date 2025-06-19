@@ -5,7 +5,7 @@ use App\Http\Controllers\AuthController;
 
 
 
-Route::get('/home', function (){
+Route::get('/', function (){
     return view('home');
 })->name('home');
 
