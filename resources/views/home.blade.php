@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CareerBridge - Portal Kerja & Magang Mahasiswa</title>
+    <title>JobNest - Portal Kerja & Magang Mahasiswa</title>
     <style>
         * {
             margin: 0;
@@ -470,7 +470,7 @@
                     <a href="#">Kontak</a>
                 </div>
             </div>
-            <p>&copy; 2025 JobNest. All rights reserved.</p>
+            <p>&copy; 2025 Kelompok 5. All rights reserved.</p>
         </div>
     </footer>
 

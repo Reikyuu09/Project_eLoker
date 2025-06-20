@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CareerBridge - Portal Kerja & Magang Mahasiswa</title>
+    <title>JobNest - Portal Kerja & Magang Mahasiswa</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         * {
@@ -366,7 +366,7 @@
         </div>
         <div class="flex justify-center my-7">
             <div class="w-full max-w-md bg-white rounded-xl shadow-lg p-8">
-                <h2 class="text-2xl font-bold text-center text-purple-500 mb-6">Register to eLoker</h2>
+                <h2 class="text-2xl font-bold text-center text-purple-500 mb-6">Register to JobNest</h2>
             
                 <form method= "POST" action = "/register">
                 @csrf
@@ -416,7 +416,7 @@
                     <a href="#">Kontak</a>
                 </div>
             </div>
-            <p>&copy; 2025 JobNest. All rights reserved.</p>
+            <p>&copy; 2025 Kelompok 5. All rights reserved.</p>
         </div>
     </footer>
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CareerBridge - Portal Kerja & Magang Mahasiswa</title>
+    <title>JobNest - Portal Kerja & Magang Mahasiswa</title>
     <style>
         * {
             margin: 0;
@@ -365,8 +365,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Wujudkan Karir Impianmu</h1>
-            <p>Platform terlengkap untuk mahasiswa mencari kerja dan magang. Temukan peluang terbaik dari perusahaan-perusahaan terpercaya.</p>
+            <h1>Selamat Datang Kembali!</h1>
+            <p>Siap lanjutkan perjalanan karirmu? Jelajahi lowongan terbaru dan temukan peluang magang terbaik yang sesuai dengan minat dan keahlianmu.</p>
             <div class="hero-buttons">
                 <a href="#features" class="btn btn-primary btn-large">Cari Lowongan</a>
             </div>
@@ -433,7 +433,7 @@
                     <a href="#">Kontak</a>
                 </div>
             </div>
-            <p>&copy; 2025 JobNest. All rights reserved.</p>
+            <p>&copy; 2025 Kelompok 5. All rights reserved.</p>
         </div>
     </footer>
 
