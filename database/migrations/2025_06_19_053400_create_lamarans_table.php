@@ -12,9 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('lamarans', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table ->string('nama');
+        $table->id();
+        $table->string('judul');
+        $table->string('perusahaan');
+        $table->string('tipe_pekerjaan');
+        $table->string('pendidikan');
+        $table->string('pengalaman');
+        $table->string('level');
+        $table->text('departemen'); 
+        $table->timestamps();
         });
     }
 

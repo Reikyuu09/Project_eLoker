@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JobNest - Portal Kerja & Magang Mahasiswa</title>
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -199,7 +200,178 @@
             margin-bottom: 3rem;
             color: #1f2937;
         }
-
+                .popular-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        
+        .tag {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .tag:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-1px);
+        }
+        
+        /* Main Content */
+        .breadcrumb {
+            padding: 20px 0;
+            color: #6b7280;
+            font-size: 14px;
+        }
+        
+        .breadcrumb a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        
+        .job-header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1f2937;
+        }
+        
+        .filters {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .filter-select {
+            padding: 8px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            background: white;
+            font-size: 14px;
+            min-width: 140px;
+        }
+        
+        /* Job Grid */
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .job-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid #e5e7eb;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .job-card:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            transform: translateY(-2px);
+        }
+        
+        .favorite-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 4px;
+        }
+        
+        .job-header-card {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+        
+        .company-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .company-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .logo-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .company-name {
+            color: #3b82f6;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .job-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+        
+        .job-location {
+            color: #6b7280;
+            font-size: 13px;
+        }
+        
+        .job-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        
+        .job-tags .tag {
+            background: #f3f4f6;
+            color: #4b5563;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            border: none;
+        }
+        
+        .tag-type { background: #dbeafe; color: #1d4ed8; }
+        .tag-education { background: #f0fdf4; color: #166534; }
+        .tag-experience { background: #fef3c7; color: #92400e; }
+        .tag-level { background: #ede9fe; color: #6b21a8; }
+        .tag-department { background: #ecfdf5; color: #047857; }
+        
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -377,10 +549,15 @@
     <section class="features" id="features">
         <div class="container">
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="job-tags feature-card">
                     <div class="feature-icon"></div>
-                    <h3></h3>
-                    <p></p>
+                    <span class="tag tag-type">Full Time</span>
+                    <span class="tag tag-education">SMA / SMK / STM</span>
+                    <span class="tag tag-education">Diploma/D1/D2/D3</span>
+                    <span class="tag tag-experience">1-2 Tahun</span>
+                    <span class="tag tag-level">Staff / Officer</span>
+                    <span class="tag tag-department">Sales / Penjualan</span>
+                    <span class="tag tag-department">Konsultan Penjualan</span>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"></div>
