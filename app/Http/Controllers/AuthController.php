@@ -30,9 +30,14 @@ class Authcontroller extends Controller
         ])){
             $user = User::where(['email' => $request->email])->first();
             Auth::login($user);
-            if($user->is_admin == true)
             
-            return redirect('/dashboard');
+            if($user->is_admin == true){
+
+                return redirect('/dashboard');
+            }
+                return redirect('/home');
+
+            
         }
 
         return redirect('login')->with('error','email/passowrd salah');

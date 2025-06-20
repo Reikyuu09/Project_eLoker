@@ -17,9 +17,9 @@ Route::get('/register', function (){
     return view('register');
 })->name('register');
 
-Route::get('/dashboard', function (){
+Route::get('/dashboard', function () {
     return view('dashboard');
-})->name('dashboardr');
+})->middleware('admin')->name('dashboard');
 
 
 Route::post('/register', [AuthController::class, 'register']);
