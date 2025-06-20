@@ -30,7 +30,7 @@ class Authcontroller extends Controller
         ])){
             $user = User::where(['email' => $request->email])->first();
             Auth::login($user);
-            return redirect('/');
+            return redirect('/dashboard');
         }
 
         return redirect('login')->with('error','email/passowrd salah');

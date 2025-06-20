@@ -352,7 +352,7 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <a href="#" class="logo">CareerBridge</a>
+            <a href="#" class="logo">JobNest</a>
             <ul class="nav-links">
                 <li><a href="#jobs">Home</a></li>
                 <li><a href="#companies">Perusahaan</a></li>
@@ -377,66 +377,40 @@
         </div>
     </section>
 
-    <!-- Search Section -->
-    <section class="search-section">
-        <div class="container">
-            <div class="search-container">
-                <form class="search-form">
-                    <div class="form-group">
-                        <label for="job-title">Posisi / Jabatan</label>
-                        <input type="text" id="job-title" placeholder="cth. Marketing Intern, Software Developer">
-                    </div>
-                    <div class="form-group">
-                        <label for="location">Lokasi</label>
-                        <select id="location">
-                            <option value="">Pilih Lokasi</option>
-                            <option value="jakarta">Jakarta</option>
-                            <option value="bandung">Bandung</option>
-                            <option value="surabaya">Surabaya</option>
-                            <option value="yogyakarta">Yogyakarta</option>
-                            <option value="remote">Remote</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-large">Cari</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <!-- Features Section -->
     <section class="features">
         <div class="container">
-            <h2>Mengapa Memilih CareerBridge?</h2>
+            <h2>Mengapa Memilih JobNest</h2>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Lowongan Terpilih</h3>
-                    <p>Kami kurasi lowongan terbaik dari perusahaan terpercaya yang sesuai dengan profil mahasiswa.</p>
+                    <div class="feature-icon"></div>
+                    <h3></h3>
+                    <p></p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Proses Cepat</h3>
-                    <p>Sistem aplikasi yang mudah dan cepat. Lamar pekerjaan hanya dengan sekali klik.</p>
+                    <div class="feature-icon"></div>
+                    <h3></h3>
+                    <p></p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Bimbingan Karir</h3>
-                    <p>Dapatkan tips dan panduan lengkap untuk meningkatkan peluang diterima kerja.</p>
+                    <div class="feature-icon"></div>
+                    <h3></h3>
+                    <p></p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Tracking Aplikasi</h3>
-                    <p>Pantau status lamaran Anda secara real-time dan dapatkan feedback dari perusahaan.</p>
+                    <div class="feature-icon"></div>
+                    <h3></h3>
+                    <p></p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🎓</div>
-                    <h3>Khusus Mahasiswa</h3>
-                    <p>Platform yang dirancang khusus untuk kebutuhan mahasiswa dan fresh graduate.</p>
+                    <div class="feature-icon"></div>
+                    <h3></h3>
+                    <p></p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Aman & Terpercaya</h3>
-                    <p>Data pribadi Anda aman dengan enkripsi tingkat enterprise dan verifikasi perusahaan.</p>
+                    <div class="feature-icon"></div>
+                    <h3></h3>
+                    <p></p>
                 </div>
             </div>
         </div>
@@ -471,7 +445,7 @@
         <div class="container">
             <h2>Siap Memulai Karir Anda?</h2>
             <p>Bergabunglah dengan ribuan mahasiswa lainnya dan temukan peluang karir terbaik</p>
-            <a href="#" class="btn btn-primary btn-large">Mulai Sekarang - Gratis!</a>
+            <a href="/register" class="btn btn-primary btn-large">Mulai Sekarang - Gratis!</a>
         </div>
     </section>
 
@@ -480,32 +454,23 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>CareerBridge</h3>
-                    <p>Platform karir terpercaya untuk mahasiswa Indonesia</p>
+                    <h3>JobNest</h3>
+                    <p>Platform karir terpercaya</p>
                 </div>
                 <div class="footer-section">
                     <h3>Untuk Mahasiswa</h3>
                     <a href="#">Cari Lowongan</a>
-                    <a href="#">Tips Karir</a>
-                    <a href="#">CV Builder</a>
-                    <a href="#">Interview Guide</a>
                 </div>
                 <div class="footer-section">
                     <h3>Untuk Perusahaan</h3>
-                    <a href="#">Pasang Lowongan</a>
-                    <a href="#">Cari Talent</a>
-                    <a href="#">Paket Berlangganan</a>
-                    <a href="#">Analytics</a>
                 </div>
                 <div class="footer-section">
                     <h3>Bantuan</h3>
                     <a href="#">FAQ</a>
                     <a href="#">Kontak</a>
-                    <a href="#">Kebijakan Privasi</a>
-                    <a href="#">Syarat & Ketentuan</a>
                 </div>
             </div>
-            <p>&copy; 2025 CareerBridge. All rights reserved.</p>
+            <p>&copy; 2025 JobNest. All rights reserved.</p>
         </div>
     </footer>
 

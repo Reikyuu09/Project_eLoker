@@ -353,7 +353,7 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <a href="#" class="logo">CareerBridge</a>
+            <a href="#" class="logo">JobNest</a>
             
         </nav>
     </header>
@@ -366,28 +366,28 @@
         </div>
         <div class="flex justify-center my-7">
             <div class="w-full max-w-md bg-white rounded-xl shadow-lg p-8">
-                <h2 class="text-2xl font-bold text-center text-blue-600 mb-6">Register to eLoker</h2>
+                <h2 class="text-2xl font-bold text-center text-purple-500 mb-6">Register to eLoker</h2>
             
                 <form method= "POST" action = "/register">
                 @csrf
                 <div class="mb-4">
                     <label class="block text-sm mb-1">Username</label>
-                    <input type="text" name= "username" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 text-black" placeholder="your_username" />
+                    <input type="text" name= "username" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 text-black" placeholder="your_username" />
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm mb-1">Email</label>
-                    <input type="email" name="email" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 text-black" placeholder="you@example.com" />
+                    <input type="email" name="email" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 text-black" placeholder="you@example.com" />
                 </div>
                 <div class="mb-4">
                     <label class="block text-sm mb-1">Password</label>
-                    <input type="password" name="password" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 text-black" placeholder="********" />
+                    <input type="password" name="password" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 text-black" placeholder="********" />
                 </div>
-                <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">Register</button>
+                <button type="submit" class="w-full bg-purple-500 text-white py-2 rounded-lg hover:bg-purple-600 transition">Register</button>
                 </form>
 
                 <p class="text-sm text-center mt-4 text-gray-500">
                 Already have an account?
-                <a href="/login" class="text-blue-600 hover:underline">Login here</a>
+                <a href="/login" class="text-purple-500 hover:underline">Login here</a>
                 </p>
             </div>
         </div>
@@ -400,32 +400,23 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>CareerBridge</h3>
+                    <h3>JobNest</h3>
                     <p>Platform karir terpercaya untuk mahasiswa Indonesia</p>
                 </div>
                 <div class="footer-section">
                     <h3>Untuk Mahasiswa</h3>
                     <a href="#">Cari Lowongan</a>
-                    <a href="#">Tips Karir</a>
-                    <a href="#">CV Builder</a>
-                    <a href="#">Interview Guide</a>
                 </div>
                 <div class="footer-section">
                     <h3>Untuk Perusahaan</h3>
-                    <a href="#">Pasang Lowongan</a>
-                    <a href="#">Cari Talent</a>
-                    <a href="#">Paket Berlangganan</a>
-                    <a href="#">Analytics</a>
                 </div>
                 <div class="footer-section">
                     <h3>Bantuan</h3>
                     <a href="#">FAQ</a>
                     <a href="#">Kontak</a>
-                    <a href="#">Kebijakan Privasi</a>
-                    <a href="#">Syarat & Ketentuan</a>
                 </div>
             </div>
-            <p>&copy; 2025 CareerBridge. All rights reserved.</p>
+            <p>&copy; 2025 JobNest. All rights reserved.</p>
         </div>
     </footer>
 

@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CareerBridge - Portal Kerja & Magang Mahasiswa</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-
     <style>
         * {
             margin: 0;
@@ -355,6 +353,12 @@
     <header>
         <nav class="container">
             <a href="#" class="logo">JobNest</a>
+            <ul class="nav-links">
+                <li><a href="#jobs">Home</a></li>
+                <li><a href="#companies">Perusahaan</a></li>
+                <li><a href="#tips">Lowongan</a></li>
+                <li><a href="#about">Tentang</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -363,27 +367,46 @@
         <div class="container">
             <h1>Wujudkan Karir Impianmu</h1>
             <p>Platform terlengkap untuk mahasiswa mencari kerja dan magang. Temukan peluang terbaik dari perusahaan-perusahaan terpercaya.</p>
+            <div class="hero-buttons">
+                <a href="#features" class="btn btn-primary btn-large">Cari Lowongan</a>
+            </div>
         </div>
+    </section>
 
-        <div class="flex justify-center my-7">
-            <div class="w-full max-w-md bg-white rounded-xl shadow-lg p-8">
-                <form method="POST" action="/login">
-                @csrf
-                <div class="mb-4">
-                    <label class="block text-sm mb-1">Email or Username</label>
-                    <input type="text" name='email' class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 text-black" placeholder="you@example.com" />
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3></h3>
+                    <p></p>
                 </div>
-                <div class="mb-4">
-                    <label class="block text-sm mb-1">Password</label>
-                    <input type="password" name='password' class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-purple-500 text-black" placeholder="********" />
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3></h3>
+                    <p></p>
                 </div>
-                <button type="submit" class="w-full bg-purple-500 text-white py-2 rounded-lg hover:bg-purple-600 transition">Login</button>
-                </form>
-
-                <p class="text-sm text-center mt-4 text-gray-500">
-                Don't have an account?
-                <a href="/register" class="text-purple-500 hover:underline">Sign up</a>
-                </p>
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3></h3>
+                    <p></p>
+                </div>
             </div>
         </div>
     </section>
@@ -395,7 +418,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>JobNest</h3>
-                    <p>Platform karir terpercaya untuk mahasiswa Indonesia</p>
+                    <p>Platform karir terpercaya</p>
                 </div>
                 <div class="footer-section">
                     <h3>Untuk Mahasiswa</h3>
