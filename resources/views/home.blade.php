@@ -388,12 +388,17 @@
 
                     <span class="tag tag-type">{{ $item->tipe_pekerjaan }}</span>
                     <span class="tag tag-education">{{ $item->pendidikan }}</span>
-                    <span class="tag tag-experience">{{ $item->pengalaman }}</span>
+                    <span class="tag tag-experience">{{ $item->skill_yang_dibutuhkan }}</span>
                     <span class="tag tag-level">{{ $item->level }}</span>
 
                     @foreach (explode(',', $item->departemen) as $dept)
                         <span class="tag tag-department">{{ trim($dept) }}</span>
                     @endforeach
+                    <div class="mt-4 text-right">
+                        <a href="{{ url('/login') }}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                            Lamar Sekarang
+                        </a>
+                    </div>
                 </div>
                 @endforeach
             </div>

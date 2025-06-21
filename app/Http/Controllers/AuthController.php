@@ -16,6 +16,16 @@ class Authcontroller extends Controller
     $lowongan = Lamaran::all();
     return view('home', compact('lowongan'));
 }
+    public function dashboard()
+{
+    $lowongan = Lamaran::all();
+    return view('dashboard', compact('lowongan'));
+}
+    public function user()
+{
+    $lowongan = Lamaran::all();
+    return view('user', compact('lowongan'));
+}
 
     public function register(Request $request): RedirectResponse{
         User::create([
@@ -38,7 +48,7 @@ class Authcontroller extends Controller
 
                 return redirect('/dashboard');
             }
-                return redirect('/home');
+                return redirect('/user');
 
             
         }

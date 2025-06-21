@@ -23,3 +23,6 @@ Route::get('/', [AuthController::class, 'home'])->name('home');
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
+Route::get('/dashboard', [AuthController::class, 'dashboard'])->middleware('admin')->name('dashboard');
+Route::get('/user', [AuthController::class, 'user'])->middleware('auth')->name('user');
+
