@@ -26,6 +26,10 @@ class Authcontroller extends Controller
     $lowongan = Lamaran::all();
     return view('user', compact('lowongan'));
 }
+    public function showForm()
+{
+    return view('from');
+}
 
     public function register(Request $request): RedirectResponse{
         User::create([
