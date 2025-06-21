@@ -4,7 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class lamaran extends Model
+class Lamaran extends Model
 {
-    //
+    protected $fillable = [
+        'judul',
+        'perusahaan',
+        'tipe_pekerjaan',
+        'pendidikan',
+        'pengalaman',
+        'level',
+        'departemen',
+    ];
 }
+

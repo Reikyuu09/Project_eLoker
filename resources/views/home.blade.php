@@ -382,10 +382,17 @@
         <div class="container">
             <h2>Mengapa Memilih JobNest</h2>
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="job-tags feature-card">
                     <div class="feature-icon"></div>
-                    <h3></h3>
-                    <p></p>
+
+                    <span class="tag tag-type">{{ $lowongan->tipe_pekerjaan }}</span>
+                    <span class="tag tag-education">{{ $lowongan->pendidikan }}</span>
+                    <span class="tag tag-experience">{{ $lowongan->pengalaman }}</span>
+                    <span class="tag tag-level">{{ $lowongan->level }}</span>
+
+                    @foreach (explode(',', $lowongan->departemen) as $dept)
+                        <span class="tag tag-department">{{ trim($dept) }}</span>
+                    @endforeach
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon"></div>
