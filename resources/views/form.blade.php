@@ -1,4 +1,5 @@
-<form enctype="multipart/form-data">
+<form action="{{ url('/form') }}" method="POST" enctype="multipart/form-data">
+@csrf
   <!-- Nama Lengkap -->
   <div class="form-group row">
     <label for="nama" class="col-4 col-form-label">Nama lengkap</label> 

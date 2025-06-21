@@ -7,7 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Lamaran; 
-
+use App\Models\IsiLamaran;
 
 class Authcontroller extends Controller
 {
@@ -42,6 +42,15 @@ class Authcontroller extends Controller
             'cv' => 'required|mimes:pdf,doc,docx|max:2048',
         ]);
         $cvPath = $request->file('cv')->store('cv_pelamar', 'public');
+
+        IsiLamaran::create([
+        'nama' => $validated['nama'],
+        'email' => $validated['email'],
+        'no_hp' => $validated['no_hp'],
+        'jurusan' => $validated['jurusan'],
+        'posisi' => $validated['posisi'],
+        'cv' => $cvPath,
+    ]);
 
         return redirect()->back()->with('success', 'Lamaran berhasil dikirim!');
 }

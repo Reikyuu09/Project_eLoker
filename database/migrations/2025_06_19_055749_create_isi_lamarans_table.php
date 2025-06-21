@@ -12,9 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('isi_lamarans', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        $table->id();
+        $table->string('nama');
+        $table->string('email');
+        $table->string('no_hp');
+        $table->string('jurusan');
+        $table->string('posisi');
+        $table->string('cv'); 
+        $table->timestamps();
+    });
     }
 
     /**
