@@ -563,7 +563,7 @@
                         <span class="tag tag-department">{{ trim($dept) }}</span>
                     @endforeach
                     <div class="mt-4 text-right">
-                        <a href="{{ url('/lamaran/form/'.$item->id) }}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                        <a href="{{ url('/form') }}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
                             Lamar Sekarang
                         </a>
                     </div>
