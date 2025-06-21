@@ -6,13 +6,16 @@ use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Lamaran; 
+
 
 class Authcontroller extends Controller
 {
     public function home()
-    {
-        return view('home');
-    }
+{
+    $lowongan = Lamaran::all();
+    return view('home', compact('lowongan'));
+}
 
     public function register(Request $request): RedirectResponse{
         User::create([
