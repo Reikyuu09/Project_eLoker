@@ -30,7 +30,18 @@ class Authcontroller extends Controller
 {
     return view('form');
 }
-
+    public function submitForm(Request $request)
+{
+    
+    $validated = $request->validate([
+            'nama' => 'required|string|max:255',
+            'email' => 'required|email',
+            'no_hp' => 'required|string|max:15',
+            'jurusan' => 'required|string|max:255',
+            'posisi' => 'required|string|max:255',
+            'cv' => 'required|mimes:pdf,doc,docx|max:2048',
+        ]);
+}
     public function register(Request $request): RedirectResponse{
         User::create([
             'name' => $request->username,
