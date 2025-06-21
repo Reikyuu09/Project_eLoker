@@ -41,6 +41,9 @@ class Authcontroller extends Controller
             'posisi' => 'required|string|max:255',
             'cv' => 'required|mimes:pdf,doc,docx|max:2048',
         ]);
+        $cvPath = $request->file('cv')->store('cv_pelamar', 'public');
+
+        return redirect()->back()->with('success', 'Lamaran berhasil dikirim!');
 }
     public function register(Request $request): RedirectResponse{
         User::create([
