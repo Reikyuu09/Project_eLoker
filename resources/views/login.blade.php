@@ -362,7 +362,7 @@
     <section class="hero">
         <div class="container">
             <h1>Wujudkan Karir Impianmu</h1>
-            <p>Platform terlengkap untuk mahasiswa mencari kerja dan magang. Temukan peluang terbaik dari perusahaan-perusahaan terpercaya.</p>
+            <p>Platform untuk mahasiswa mencari kerja dan magang. Temukan peluang terbaik dari perusahaan-perusahaan terpercaya.</p>
         </div>
 
         <div class="flex justify-center my-7">

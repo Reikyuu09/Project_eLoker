@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JobNest - Portal Kerja & Magang Mahasiswa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <style>
         * {
             margin: 0;
@@ -380,28 +381,46 @@
     <!-- Features Section -->
     <section class="features">
         <div class="container">
-            <h2>Mengapa Memilih JobNest</h2>
-            <div class="features-grid">
+            <h2>Mengapa Memilih JobNest?</h2>
+            <div class="container py-4">
+            <div class="container py-4">
+            <div class="container py-4">
+            <div class="row g-4">
                 @foreach ($lowongan as $item)
-                <div class="job-tags feature-card">
-                    <div class="feature-icon"></div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0 bg-light text-dark">
+                        <div class="card-body">
+                            <h5 class="card-title mb-3 text-dark">{{ $item->nama_posisi ?? 'Posisi Tidak Diketahui' }}</h5>
+                            
+                            <div class="mb-2">
+                                <span class="badge bg-info text-dark">{{ $item->tipe_pekerjaan }}</span>
+                                <span class="badge bg-info text-dark">{{ $item->pendidikan }}</span>
+                                <span class="badge bg-info text-dark">{{ $item->skill_yang_dibutuhkan }}</span>
+                                <span class="badge bg-info text-dark">{{ $item->level }}</span>
+                            </div>
 
-                    <span class="tag tag-type">{{ $item->tipe_pekerjaan }}</span>
-                    <span class="tag tag-education">{{ $item->pendidikan }}</span>
-                    <span class="tag tag-experience">{{ $item->skill_yang_dibutuhkan }}</span>
-                    <span class="tag tag-level">{{ $item->level }}</span>
+                            <div class="mt-2">
+                                @foreach (explode(',', $item->departemen) as $dept)
+                                <span class="badge bg-info text-dark">{{ trim($dept) }}</span>
+                                @endforeach
+                            </div>
 
-                    @foreach (explode(',', $item->departemen) as $dept)
-                        <span class="tag tag-department">{{ trim($dept) }}</span>
-                    @endforeach
-                    <div class="mt-4 text-right">
-                        <a href="{{ url('/login') }}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                            Lamar Sekarang
-                        </a>
+                            <div class="mt-4 text-end">
+                                <a href="{{ url('/login') }}" class="btn btn-primary">
+                                    Lamar Sekarang
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 @endforeach
             </div>
+        </div>
+
+        </div>
+
+        </div>
+
         </div>
     </section>
 
@@ -410,15 +429,15 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <h3>15,000+</h3>
+                    <h3>15.000+</h3>
                     <p>Mahasiswa Terdaftar</p>
                 </div>
                 <div class="stat-item">
                     <h3>500+</h3>
-                    <p>Perusahaan Partner</p>
+                    <p>Company Partner</p>
                 </div>
                 <div class="stat-item">
-                    <h3>2,500+</h3>
+                    <h3>2500+</h3>
                     <p>Lowongan Aktif</p>
                 </div>
                 <div class="stat-item">
@@ -525,5 +544,6 @@
             observer.observe(statsSection);
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 </html>                
