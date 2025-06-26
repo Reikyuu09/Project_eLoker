@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JobNest - Portal Kerja & Magang Mahasiswa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
 
         * {
@@ -547,30 +548,37 @@
 
     <!-- Features Section -->
     <section class="features" id="features">
-        <div class="container">
-            <div class="features-grid">
-                <div class="features-grid">
+        <div class="container py-4">
+            <div class="row g-4">
                 @foreach ($lowongan as $item)
-                <div class="job-tags feature-card">
-                    <div class="feature-icon"></div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <h5 class="card-title mb-3">{{ $item->tipe_pekerjaan ?? 'Posisi Tidak Diketahui' }}</h5>
+                            
+                            <div class="mb-2">
+                                <span class="badge bg-primary">{{ $item->tipe_pekerjaan }}</span>
+                                <span class="badge bg-success">{{ $item->pendidikan }}</span>
+                                <span class="badge bg-info text-dark">{{ $item->skill_yang_dibutuhkan }}</span>
+                                <span class="badge bg-warning text-dark">{{ $item->level }}</span>
+                            </div>
 
-                    <span class="tag tag-type">{{ $item->tipe_pekerjaan }}</span>
-                    <span class="tag tag-education">{{ $item->pendidikan }}</span>
-                    <span class="tag tag-experience">{{ $item->skill_yang_dibutuhkan }}</span>
-                    <span class="tag tag-level">{{ $item->level }}</span>
+                            <div class="mt-2">
+                                @foreach (explode(',', $item->departemen) as $dept)
+                                <span class="badge bg-secondary">{{ trim($dept) }}</span>
+                                @endforeach
+                            </div>
 
-                    @foreach (explode(',', $item->departemen) as $dept)
-                        <span class="tag tag-department">{{ trim($dept) }}</span>
-                    @endforeach
-                    <div class="mt-4 text-right">
-                        <a href="{{ url('/form') }}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                            Lamar Sekarang
-                        </a>
+                            <div class="mt-4 text-end">
+                                <a href="{{ url('/login') }}" class="btn btn-danger">
+                                    Lamar Sekarang
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 @endforeach
-            </div>
-            </div>
+            </div>
         </div>
     </section>
 
