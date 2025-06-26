@@ -4,13 +4,14 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Models\Lamaran;
 use Illuminate\Support\Str;
 
 class LamaranSeeder extends Seeder
 {
     public function run(): void
     {
-        DB::table('lamarans')->insert([
+        $data = [
     [
         'judul' => 'Software Engineer',
         'perusahaan' => 'PT. Maju Mundur',
@@ -143,7 +144,16 @@ class LamaranSeeder extends Seeder
         'created_at' => now(),
         'updated_at' => now(),
     ],
-]);
+    ];
 
+    foreach ($data as $item) {
+            Lamaran::firstOrCreate(
+                ['judul' => $item['judul']],   
+                array_merge($item, [
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ])
+            );
+        }
     }
 }
