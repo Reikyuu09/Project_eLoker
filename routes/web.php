@@ -27,4 +27,6 @@ Route::get('/dashboard', [AuthController::class, 'dashboard'])->middleware('admi
 Route::get('/user', [AuthController::class, 'user'])->middleware('auth')->name('user');
 Route::get('/form', [AuthController::class, 'form']);
 Route::post('/form', [AuthController::class, 'submitForm'])->name('form.submit');
+Route::get('/lamaran/create', [IsiLamaranController::class, 'create'])->name('lamaran.create');
+Route::post('/lamaran', [IsiLamaranController::class, 'store'])->name('lamaran.store');
 
