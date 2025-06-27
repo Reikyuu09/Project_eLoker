@@ -10,56 +10,27 @@ class IsiLamaranController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
-    {
-        //
-    }
+{
+    $validated = $request->validate([
+        'nama' => 'required',
+        'email' => 'required|email',
+        'no_hp' => 'required',
+        'jurusan' => 'required',
+        'posisi' => 'required',
+        'cv' => 'required|mimes:pdf,docx|max:2048',
+    ]);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(isi_lamaran $isi_lamaran)
-    {
-        //
-    }
+    $cvPath = $request->file('cv')->store('cv', 'public');
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(isi_lamaran $isi_lamaran)
-    {
-        //
-    }
+    IsiLamaran::create([
+        'nama' => $validated['nama'],
+        'email' => $validated['email'],
+        'no_hp' => $validated['no_hp'],
+        'jurusan' => $validated['jurusan'],
+        'posisi' => $validated['posisi'],
+        'cv' => $cvPath,
+    ]);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, isi_lamaran $isi_lamaran)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(isi_lamaran $isi_lamaran)
-    {
-        //
-    }
+    return redirect()->back()->with('success', 'Lamaran berhasil dikirim!');
 }
