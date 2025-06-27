@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class IsiLamaranController extends Controller
 {
+    public function create()
+    {
+        return view('lamaran.create'); 
+    }
+
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -32,3 +37,4 @@ class IsiLamaranController extends Controller
         return redirect()->back()->with('success', 'Lamaran berhasil dikirim!');
     }
 }
+
