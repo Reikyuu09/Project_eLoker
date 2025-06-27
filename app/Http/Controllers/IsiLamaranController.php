@@ -7,9 +7,7 @@ use Illuminate\Http\Request;
 
 class IsiLamaranController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function store(Request $request)
 {
     $validated = $request->validate([
@@ -33,4 +31,5 @@ class IsiLamaranController extends Controller
     ]);
 
     return redirect()->back()->with('success', 'Lamaran berhasil dikirim!');
+}
 }
