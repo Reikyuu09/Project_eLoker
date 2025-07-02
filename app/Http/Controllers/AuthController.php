@@ -19,7 +19,10 @@ class Authcontroller extends Controller
     public function dashboard()
 {
     $lowongan = Lamaran::all();
-    return view('dashboard', compact('lowongan'));
+    return view('dashboard', array_merge(
+        compact('lowongan'),
+        ['pageSlug' => 'dashboard']
+    ));
 }
     public function user()
 {
@@ -73,7 +76,7 @@ class Authcontroller extends Controller
             
             if($user->is_admin == true){
 
-                return redirect('/dashboard');
+                return redirect('/dashboard/lamaran');
             }
                 return redirect('/user');
 

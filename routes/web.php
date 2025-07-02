@@ -3,10 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\IsiLamaranController;
+use App\Http\Controllers\LamaranController;
 
-
-
-
+Route::middleware(['admin'])->prefix('dashboard')->group(function () {
+    Route::resource('lamaran', LamaranController::class);
+});
 
 
 Route::get('/login', function (){
@@ -14,7 +15,9 @@ Route::get('/login', function (){
 })->name('login');
 
 Route::get('/register', function (){
-    return view('register');
+    return view('dashboard', [
+        'pageSlug' => 'dashboard'
+    ]);
 })->name('register');
 
 Route::get('/dashboard', function () {

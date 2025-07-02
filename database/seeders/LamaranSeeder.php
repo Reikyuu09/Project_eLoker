@@ -146,14 +146,18 @@ class LamaranSeeder extends Seeder
     ],
     ];
 
+    $judulList = collect($data)->pluck('judul')->toArray();
+    Lamaran::whereNotIn('judul', $judulList)->delete();
+
     foreach ($data as $item) {
-            Lamaran::firstOrCreate(
-                ['judul' => $item['judul']],   
-                array_merge($item, [
-                    'created_at' => now(),
-                    'updated_at' => now(),
-                ])
+            Lamaran::updateOrCreate(
+            ['judul' => $item['judul']], 
+            array_merge($item, [
+            'created_at' => now(),
+            'updated_at' => now(),
+            ])
             );
+
         }
     }
 }

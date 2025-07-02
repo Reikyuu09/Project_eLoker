@@ -554,9 +554,10 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm border-0">
                         <div class="card-body">
-                            <h5 class="card-title mb-3">{{ $item->tipe_pekerjaan ?? 'Posisi Tidak Diketahui' }}</h5>
+                            <h5 class="card-title mb-3">{{ $item->judul ?? 'Posisi Tidak Diketahui' }}</h5>
                             
                             <div class="mb-2">
+                                <span class="badge bg-primary">{{ $item->perusahaan }}</span>
                                 <span class="badge bg-primary">{{ $item->tipe_pekerjaan }}</span>
                                 <span class="badge bg-success">{{ $item->pendidikan }}</span>
                                 <span class="badge bg-info text-dark">{{ $item->skill_yang_dibutuhkan }}</span>
@@ -570,7 +571,7 @@
                             </div>
 
                             <div class="mt-4 text-end">
-                                <a href="{{ url('/login') }}" class="btn btn-danger">
+                                <a href="{{ url('/form') }}" class="btn btn-danger">
                                     Lamar Sekarang
                                 </a>
                             </div>
