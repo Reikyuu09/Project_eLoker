@@ -571,7 +571,7 @@
                             </div>
 
                             <div class="mt-4 text-end">
-                                <a href="{{ url('/form') }}" class="btn btn-danger">
+                                <a href="{{ route('lamaran.form') }}" class="btn btn-danger">
                                     Lamar Sekarang
                                 </a>
                             </div>

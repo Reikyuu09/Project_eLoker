@@ -98,7 +98,7 @@
 
                 <!-- Buttons -->
                 <div class="flex justify-between items-center pt-6">
-                    <a href="{{ url('/') }}" 
+                    <a href="{{ url('/user') }}" 
                        class="text-sm text-blue-600 hover:text-blue-800 font-medium">
                         ← Kembali ke Beranda
                     </a>

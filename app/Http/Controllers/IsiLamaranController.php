@@ -9,7 +9,7 @@ class IsiLamaranController extends Controller
 {
     public function create()
     {
-        return view('lamaran.create'); 
+        return view('lamaran.form'); 
     }
 
     public function store(Request $request)
