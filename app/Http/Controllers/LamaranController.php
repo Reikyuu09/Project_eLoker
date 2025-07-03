@@ -10,7 +10,7 @@ class LamaranController extends Controller
 {
     public function index()
     {
-        $lowongan = Lamaran::latest()->get();
+        $lowongan = Lamaran::orderBy('created_at', 'asc')->get();
         return view('dashboard.lamaran.index', compact('lowongan'));
     }
 

@@ -45,7 +45,7 @@
                 </div>
             @endif
 
-            <form method="POST" action="{{ route('lamaran.store') }}" enctype="multipart/form-data" class="space-y-4">
+            <form method="POST" action="{{ route('isi-lamaran.store') }}" enctype="multipart/form-data" class="space-y-4">
                 @csrf
 
                 <!-- Nama Lengkap -->

@@ -14,6 +14,7 @@ class Lamaran extends Model
         'pengalaman',
         'level',
         'departemen',
+        'img'
     ];
 }
 
