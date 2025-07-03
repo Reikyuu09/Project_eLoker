@@ -18,9 +18,7 @@ Route::get('/login', function (){
 
 
 Route::get('/register', function (){
-    return view('dashboard', [
-        'pageSlug' => 'dashboard'
-    ]);
+    return view('register');
 })->name('register');
 
 Route::post('/logout', function () {
