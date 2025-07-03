@@ -17,6 +17,8 @@ return new class extends Migration
         $table->string('perusahaan');
         $table->string('tipe_pekerjaan');
         $table->string('pendidikan');
+        $table->string('skill_yang_dibutuhkan')->nullable();
+        $table->string('img')->nullable();
         $table->string('pengalaman');
         $table->string('level');
         $table->text('departemen'); 
