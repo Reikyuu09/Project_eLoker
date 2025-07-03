@@ -7,7 +7,6 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Lamaran; 
-use App\Models\IsiLamaran;
 
 class Authcontroller extends Controller
 {
@@ -33,30 +32,7 @@ class Authcontroller extends Controller
 {
     return view('form');
 }
-    public function submitForm(Request $request)
-{
     
-    $validated = $request->validate([
-            'nama' => 'required|string|max:255',
-            'email' => 'required|email',
-            'no_hp' => 'required|string|max:15',
-            'jurusan' => 'required|string|max:255',
-            'posisi' => 'required|string|max:255',
-            'cv' => 'required|mimes:pdf,doc,docx|max:2048',
-        ]);
-        $cvPath = $request->file('cv')->store('cv_pelamar', 'public');
-
-        IsiLamaran::create([
-        'nama' => $validated['nama'],
-        'email' => $validated['email'],
-        'no_hp' => $validated['no_hp'],
-        'jurusan' => $validated['jurusan'],
-        'posisi' => $validated['posisi'],
-        'cv' => $cvPath,
-    ]);
-
-        return redirect()->back()->with('success', 'Lamaran berhasil dikirim!');
-}
     public function register(Request $request): RedirectResponse{
         User::create([
             'name' => $request->username,
@@ -85,6 +61,12 @@ class Authcontroller extends Controller
 
         return redirect('login')->with('error','email/passowrd salah');
     }
-    // fungsii auth::attemp adalah untuk pengecekan user mana di database yanng di input user saat mengisi username dan pass
-    public function logaut(){}
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/login');
+    }
 }
