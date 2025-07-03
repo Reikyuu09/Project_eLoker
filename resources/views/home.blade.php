@@ -354,12 +354,6 @@
     <header>
         <nav class="container">
             <a href="#" class="logo">JobNest</a>
-            <ul class="nav-links">
-                <li><a href="#jobs">Home</a></li>
-                <li><a href="#companies">Perusahaan</a></li>
-                <li><a href="#tips">Lowongan</a></li>
-                <li><a href="#about">Tentang</a></li>
-            </ul>
             <div class="auth-buttons">
                 <a href="/login" class="btn btn-outline">Masuk</a>
                 <a href="/register" class="btn btn-primary">Daftar</a>
@@ -379,34 +373,31 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2>Mengapa Memilih JobNest?</h2>
-            <div class="container py-4">
-            <div class="container py-4">
-            <div class="container py-4">
+    <section class="features" id="features">
+        <div class="container py-4">
             <div class="row g-4">
                 @foreach ($lowongan as $item)
                 <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm border-0 bg-light text-dark">
+                    <div class="card h-100 shadow-sm border-0">
                         <div class="card-body">
-                            <h5 class="card-title mb-3 text-dark">{{ $item->nama_posisi ?? 'Posisi Tidak Diketahui' }}</h5>
+                            <h5 class="card-title mb-3">{{ $item->judul ?? 'Posisi Tidak Diketahui' }}</h5>
                             
                             <div class="mb-2">
-                                <span class="badge bg-info text-dark">{{ $item->tipe_pekerjaan }}</span>
-                                <span class="badge bg-info text-dark">{{ $item->pendidikan }}</span>
+                                <span class="badge bg-primary">{{ $item->perusahaan }}</span>
+                                <span class="badge bg-primary">{{ $item->tipe_pekerjaan }}</span>
+                                <span class="badge bg-success">{{ $item->pendidikan }}</span>
                                 <span class="badge bg-info text-dark">{{ $item->skill_yang_dibutuhkan }}</span>
-                                <span class="badge bg-info text-dark">{{ $item->level }}</span>
+                                <span class="badge bg-warning text-dark">{{ $item->level }}</span>
                             </div>
 
                             <div class="mt-2">
                                 @foreach (explode(',', $item->departemen) as $dept)
-                                <span class="badge bg-info text-dark">{{ trim($dept) }}</span>
+                                <span class="badge bg-secondary">{{ trim($dept) }}</span>
                                 @endforeach
                             </div>
 
                             <div class="mt-4 text-end">
-                                <a href="{{ url('/login') }}" class="btn btn-primary">
+                                <a href="{{ route('login') }}" class="btn btn-danger">
                                     Lamar Sekarang
                                 </a>
                             </div>
@@ -414,13 +405,7 @@
                     </div>
                 </div>
                 @endforeach
-            </div>
-        </div>
-
-        </div>
-
-        </div>
-
+            </div>
         </div>
     </section>
 

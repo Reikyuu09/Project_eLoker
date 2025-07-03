@@ -526,12 +526,11 @@
     <header>
         <nav class="container">
             <a href="#" class="logo">JobNest</a>
-            <ul class="nav-links">
-                <li><a href="#jobs">Home</a></li>
-                <li><a href="#companies">Perusahaan</a></li>
-                <li><a href="#tips">Lowongan</a></li>
-                <li><a href="#about">Tentang</a></li>
-            </ul>
+
+            <form action="{{ route('logout') }}" method="POST" style="margin: 0;">
+            @csrf
+            <button type="submit" class="btn btn-outline">Logout</button>
+    </form>
         </nav>
     </header>
 
@@ -548,40 +547,73 @@
 
     <!-- Features Section -->
     <section class="features" id="features">
-        <div class="container py-4">
-            <div class="row g-4">
-                @foreach ($lowongan as $item)
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="card-body">
-                            <h5 class="card-title mb-3">{{ $item->judul ?? 'Posisi Tidak Diketahui' }}</h5>
+    <div class="container py-4">
+        <div class="row g-4">
+            @foreach ($lowongan as $item)
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0 position-relative"> {{-- Added position-relative for heart icon positioning --}}
+                    <div class="card-body">
+                        {{-- Top Section: Logo, Company Name, Job Title, Location, Heart Icon --}}
+                        <div class="d-flex align-items-start mb-3"> {{-- Flexbox for alignment --}}
+                            <div class="flex-shrink-0 me-3"> {{-- For the logo --}}
+                                @if ($item->img)
+                                    <img src="{{ asset('uploads/lamaran/' . $item->img) }}" alt="{{ $item->perusahaan }}" class="rounded-circle" style="width: 60px; height: 60px; object-fit: cover;">
+                                @else
+                                    {{-- Placeholder for no image --}}
+                                    <div class="bg-light rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
+                                        <i class="bi bi-building" style="font-size: 2rem; color: #6c757d;"></i> {{-- Example icon, requires Bootstrap Icons --}}
+                                    </div>
+                                @endif
+                            </div>
+                            <div class="flex-grow-1"> {{-- For company name and job title --}}
+                                <h6 class="card-subtitle text-muted mb-1">{{ $item->perusahaan ?? 'Nama Perusahaan' }}</h6>
+                                <h5 class="card-title fw-bold mb-0">{{ $item->judul ?? 'Posisi Tidak Diketahui' }}</h5>
+                                <div class="text-muted small mt-1">
+                                    <i class="bi bi-geo-alt-fill me-1"></i> {{-- Requires Bootstrap Icons --}}
+                                    {{ $item->lokasi ?? 'Lokasi Tidak Diketahui' }} {{-- Assuming a 'lokasi' field --}}
+                                </div>
+                            </div>
+                            {{-- Heart Icon (Favorite) --}}
+                            <button class="btn btn-sm btn-outline-secondary border-0 ms-auto" style="position: absolute; top: 15px; right: 15px;">
+                                <i class="bi bi-heart"></i> {{-- Requires Bootstrap Icons --}}
+                            </button>
+                        </div>
+
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <span class="badge bg-primary">{{ $item->tipe_pekerjaan ?? 'N/A' }}</span>
+                            <span class="badge bg-primary">{{ $item->pendidikan ?? 'N/A' }}</span>
+
+                            @foreach (explode(',', $item->skill_yang_dibutuhkan ?? '') as $skill)
+                                @if (trim($skill) != '')
+                                    <span class="badge bg-success">{{ trim($skill) }}</span>
+                                @endif
+                            @endforeach
                             
-                            <div class="mb-2">
-                                <span class="badge bg-primary">{{ $item->perusahaan }}</span>
-                                <span class="badge bg-primary">{{ $item->tipe_pekerjaan }}</span>
-                                <span class="badge bg-success">{{ $item->pendidikan }}</span>
-                                <span class="badge bg-info text-dark">{{ $item->skill_yang_dibutuhkan }}</span>
-                                <span class="badge bg-warning text-dark">{{ $item->level }}</span>
-                            </div>
+                            <span class="badge bg-info text-dark">{{ $item->level ?? 'N/A' }}</span>
 
-                            <div class="mt-2">
-                                @foreach (explode(',', $item->departemen) as $dept)
-                                <span class="badge bg-secondary">{{ trim($dept) }}</span>
-                                @endforeach
-                            </div>
+                            @foreach (explode(',', $item->departemen ?? '') as $dept)
+                                @if (trim($dept) != '')
+                                    <span class="badge bg-warning text-dark">{{ trim($dept) }}</span>
+                                @endif
+                            @endforeach
+                            
 
-                            <div class="mt-4 text-end">
-                                <a href="{{ route('lamaran.form') }}" class="btn btn-danger">
-                                    Lamar Sekarang
-                                </a>
+                        </div>
+                        <hr class="my-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
                             </div>
+                            <a href="{{ route('lamaran.form') }}" class="btn btn-danger btn-sm"> {{-- Smaller button --}}
+                                Lamar Sekarang
+                            </a>
                         </div>
                     </div>
                 </div>
-                @endforeach
-            </div>
+            </div>
+            @endforeach
         </div>
-    </section>
+    </div>
+</section>
 
 
     <!-- Footer -->

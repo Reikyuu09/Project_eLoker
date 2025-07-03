@@ -21,7 +21,6 @@
     <nav class="sidebar d-flex flex-column">
         <h4 class="text-center fw-bold mb-4">JobNest</h4>
         <ul class="nav flex-column mb-auto">
-            <li class="nav-item"><a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">Dashboard</a></li>
             <li class="nav-item"><a href="{{ route('lamaran.index') }}" class="nav-link {{ request()->routeIs('lamaran.index') ? 'active' : '' }}">Data Lowongan</a></li>
             <li class="nav-item"><a href="{{ route('lamaran.create') }}" class="nav-link {{ request()->routeIs('lamaran.create') ? 'active' : '' }}">Tambah Lowongan</a></li>
         </ul>
