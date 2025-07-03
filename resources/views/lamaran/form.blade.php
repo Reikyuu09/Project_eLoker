@@ -111,12 +111,7 @@
         </div>
 
         <!-- Footer -->
-        <div class="text-center mt-6">
-            <p class="text-white/60 text-sm">
-                Sudah punya akun? 
-                <a href="#" class="text-white hover:underline font-medium">Login</a>
-            </p>
-        </div>
+        
     </div>
 </body>
 </html>
