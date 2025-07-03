@@ -32,6 +32,7 @@ class LamaranController extends Controller
             'img' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
+
         $imgName = null;
         if ($request->hasFile('img')) {
             $imgName = time() . '_' . Str::slug($request->judul) . '.' . $request->img->extension();
